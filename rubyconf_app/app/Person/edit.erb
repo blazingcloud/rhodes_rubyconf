@@ -1,0 +1,42 @@
+<div class="toolbar">
+	<h1 id="pageTitle">
+		Edit <%=@person.name%>
+	</h1>
+</div>
+
+<form title="Edit Person" 
+	  class="panel" 
+	  id="person_edit_form" 
+	  method="POST" 
+	  action="<%=url_for(:action => :update)%>" selected="true">
+	<fieldset>
+		<input type="hidden" name="id" value="<%=@person.object%>"/>
+		
+		  <div class="row">
+			  <label>Name: </label>
+			  <input type="text" name="person[name]" value="<%=@person.name%>"/>
+		  </div>
+		
+		  <div class="row">
+			  <label>Origin: </label>
+			  <input type="text" name="person[origin]" value="<%=@person.origin%>"/>
+		  </div>
+		
+		  <div class="row">
+			  <label>Twitter: </label>
+			  <input type="text" name="person[twitter]" value="<%=@person.twitter%>"/>
+		  </div>
+		
+		  <div class="row">
+			  <label>Url: </label>
+			  <input type="text" name="person[url]" value="<%=@person.url%>"/>
+		  </div>
+		
+	</fieldset>
+	<input type="submit" value="Update"/>
+	<p align="center">
+		<a href="<%=url_for(:action => :delete, :id => @person.object)%>">
+			<font color="#990000">Delete</font>
+		</a>
+	</p>
+</form>

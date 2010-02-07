@@ -1,0 +1,37 @@
+<div class="toolbar">
+	<h1 id="pageTitle">
+		New Person
+	</h1>
+</div>
+
+<form title="New Person" 
+	  class="panel"
+	  id="person_new_form" 
+	  method="POST" 
+	  action="<%=url_for(:action => :create)%>" selected="true">
+	<fieldset>
+		<input type="hidden" name="id" value="<%=@person.object%>"/>
+		
+		  <div class="row">
+			  <label>Name: </label>
+			  <input type="text" name="person[name]"/>
+		  </div>
+		
+		  <div class="row">
+			  <label>Origin: </label>
+			  <input type="text" name="person[origin]"/>
+		  </div>
+		
+		  <div class="row">
+			  <label>Twitter: </label>
+			  <input type="text" name="person[twitter]"/>
+		  </div>
+		
+		  <div class="row">
+			  <label>Url: </label>
+			  <input type="text" name="person[url]"/>
+		  </div>
+		
+	</fieldset>
+	<input type="submit" value="Create"/>
+</form>

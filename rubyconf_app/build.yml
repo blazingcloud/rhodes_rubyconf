@@ -1,0 +1,15 @@
+sdk: "/usr/local/lib/ruby/gems/1.8/gems/rhodes-1.4.0"
+sdkversion: 1.4.0
+name: rubyconf_app
+version: 1.4.0
+vendor: rhomobile
+bbver: 4.6
+wmsdk: "Windows Mobile 6 Professional SDK (ARMV4I)"
+applog: rholog.txt
+iphone:
+  configuration: Debug
+  sdk: iphonesimulator3.0
+  provisionprofile:
+  codesignidentity:
+  entitlements:
+extensions: ["extension-name-here", "second-extension-name"]

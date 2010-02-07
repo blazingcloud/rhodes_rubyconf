@@ -1,0 +1,34 @@
+<div class="toolbar">
+	<h1 id="pageTitle">
+		<%=@person.name%>
+	</h1>
+</div>
+
+<div class="panel" selected="true">
+
+<a class="button right_button" href="<%=url_for(:action => :edit, :id => @person.object)%>" target="_self">Edit</a>
+
+<table class="grid">
+  
+  <tr>
+	<td class="gridleft">Name</td>
+    <td class="gridright"><%=@person.name%></td>
+  </tr>
+  
+  <tr>
+	<td class="gridleft">Origin</td>
+    <td class="gridright"><%=@person.origin%></td>
+  </tr>
+  
+  <tr>
+	<td class="gridleft">Twitter</td>
+    <td class="gridright"><%=@person.twitter%></td>
+  </tr>
+  
+  <tr>
+	<td class="gridleft">Url</td>
+    <td class="gridright"><%=@person.url%></td>
+  </tr>
+  
+</table>
+</div>
