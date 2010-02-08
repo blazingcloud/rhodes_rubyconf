@@ -9,6 +9,11 @@ class AppApplication < Rho::RhoApplication
              { :label => "About", :action => '/app/about', :icon => "/public/icons/weather.png" }] #FIXME
     # Important to call super _after_ you define @tabs!
     super
+    
+    @default_menu = { "Schedule" => "/app", 
+                          "People" => "/app/Person", 
+                          "Map" => "/app/Person/map", 
+                          "About" => "/app/about" }
   end
   
 end
