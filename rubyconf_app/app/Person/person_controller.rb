@@ -52,7 +52,7 @@ class PersonController < Rho::RhoController
     end
     p "annotations=#{annotations}"
     MapView.create(
-      :settings => {:map_type => "satellite", :region => ["US"],
+      :settings => {:map_type => "hybrid", :region => ["US"],
                     :zoom_enabled => true, :scroll_enabled => true, :shows_user_location => false},
       :annotations => annotations
     )
