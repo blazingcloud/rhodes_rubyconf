@@ -34,9 +34,42 @@ class PersonController < Rho::RhoController
     end
   end
 
+  def map
+    p "------------------------------------- map"
+    @people = Person.find(:all)
+    annotations = @people.map do |person|
+      p "person=#{person.inspect}"
+      result = {}
+      unless person.latitude.nil? or person.latitude.empty?
+        result[:latitude] = person.latitude
+        result[:longitude] = person.longitude
+      end
+      result[:title] = person.name
+      result[:subtitle] = person.twitter
+      result[:street_address] = person.zip
+      result[:url] = "/app/Person/#{person.object}/show"
+      result
+    end
+    p "annotations=#{annotations}"
+    MapView.create(
+      :settings => {:map_type => "satellite", :region => ["US"],
+                    :zoom_enabled => true, :scroll_enabled => true, :shows_user_location => false},
+      :annotations => annotations
+    )
+    redirect :action => :index
+  end
+
   # POST /Person/create
   def create
-    @person = Person.new(@params['person'])
+    p "------------------------------------- create #{@params}"
+    person_attrs = @params['person']
+    if person_attrs['use_current_location'] == "on"
+      person_attrs.delete('use_current_location')
+      sleep(5) until GeoLocation.latitude != 0
+      person_attrs['latitude'] = GeoLocation.latitude.to_s
+      person_attrs['longitude'] = GeoLocation.longitude.to_s
+    end
+    @person = Person.new(person_attrs)
     @person.save
     redirect :action => :index
   end

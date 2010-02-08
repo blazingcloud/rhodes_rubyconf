@@ -16,11 +16,24 @@
 			  <label>Name: </label>
 			  <input type="text" name="person[name]" value="<%=@person.name%>"/>
 		  </div>
-		
-		  <div class="row">
-			  <label>Origin: </label>
-			  <input type="text" name="person[origin]" value="<%=@person.origin%>"/>
-		  </div>
+
+    <% unless @person.latitude.nil? or @person.latitude.empty? %>
+      <div class="row">
+        <label>Latitude: </label>
+        <input type="text" name="person[latitude]" value="<%=@person.latitude%>"/>
+      </div>
+
+      <div class="row">
+        <label>Latitude: </label>
+        <input type="text" name="person[longitude]" value="<%=@person.longitude%>"/>
+      </div>
+    <% end %>
+    
+    <div class="row">
+      <label>City, State or Zip: </label>
+      <input type="text" name="person[zip]" value="<%=@person.zip%>"/>
+    </div>
+
 		
 		  <div class="row">
 			  <label>Twitter: </label>
@@ -37,6 +50,11 @@
 	<p align="center">
 		<a href="<%=url_for(:action => :delete, :id => @person.object)%>">
 			<font color="#990000">Delete</font>
+		</a>
+	</p>
+  	<p align="center">
+		<a href="<%=url_for(:action => :index)%>">
+			<font >Cancel</font>
 		</a>
 	</p>
 </form>
