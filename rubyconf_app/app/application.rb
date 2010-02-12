@@ -6,7 +6,7 @@ class AppApplication < Rho::RhoApplication
     @tabs = [{ :label => "Schedule", :action => '/app', :icon => "/public/icons/calendar.png"},
              { :label => "People", :action => '/app/Person', :icon => "/public/icons/walk.png", :reload => true  },
              { :label => "Map", :action => '/app/Person/map', :icon => "/public/icons/signs.png", :reload => true },
-             { :label => "About", :action => '/app/about', :icon => "/public/icons/weather.png" }] #FIXME
+             { :label => "About", :action => '/app/Person/about', :icon => "/public/icons/weather.png" }] #FIXME
     # Important to call super _after_ you define @tabs!
     super
     

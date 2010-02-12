@@ -23,6 +23,10 @@ class PersonController < Rho::RhoController
     @person = Person.new
     render :action => :new
   end
+  
+  def about 
+    render :action => :about
+  end
 
   # GET /Person/{1}/edit
   def edit
