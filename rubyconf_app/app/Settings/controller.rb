@@ -17,7 +17,7 @@ class SettingsController < Rho::RhoController
   def start
       @logged_in = SyncEngine::logged_in
       if @logged_in == 0
-        @logged_in = SyncEngine.login("anonymous", "password", (url_for :action => :login_callback) )
+        @logged_in = SyncEngine.login("tester", "tester", (url_for :action => :login_callback) )
       end
       WebView.navigate ( '/app' )
   end
@@ -65,6 +65,6 @@ class SettingsController < Rho::RhoController
   def do_sync
     SyncEngine.dosync
     @msg =  "Sync has been triggered."
-    redirect :action => :index, :query => {:msg => @msg}
+    redirect :controller =>'Person', :action => :about
   end
 end

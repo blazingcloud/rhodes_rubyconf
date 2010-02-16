@@ -6,6 +6,11 @@
     #about p {
       margin: 20px 20px 0 20px;
     }
+	
+	#sync {
+		positon: relative;
+		margin-top: 300px;
+	}
   </style>
 </div>
 
@@ -13,11 +18,9 @@
 <p>People going to LA RubyConf can add some info about themselves and where they come from. Then we can see a map of how far people have travelled.  </a> 
 <p>By Sarah Allen and Lee Lundrigan using Rhodes and RhoSync from Rhomobile.  The source is available on github.com/blazingcloud/rhodes_rubyconf.  It is open source, feel free to play with it, add improvements, and send us a pull request.</p>
 </div>
-<div>
-	<% if SyncEngine::logged_in > 0 %>		
-	<li><%=link_to "Logout", :controller => :Settings, :action => :logout%></li>
-	<% else %>
-	<li><%=link_to "Login", :controller => :Settings, :action => :login%></li>
-	<% end %>
-	<li><%=link_to "Perform Sync", :controller => :Settings, :action => :do_sync%></li>
+
+<div id="sync">
+	<p align="center">
+		<%=link_to "Perform Sync", :controller => :Settings, :action => :do_sync%>
+	</p>
 </div>

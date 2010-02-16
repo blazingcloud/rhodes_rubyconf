@@ -7,8 +7,8 @@ bbver: 4.6
 sdk: /usr/local/lib/ruby/gems/1.8/gems/rhodes-1.4.0
 applog: rholog.txt
 wmsdk: Windows Mobile 6 Professional SDK (ARMV4I)
-version: 1.4.0
-vendor: rhomobile
+version: 1.0
+vendor: Blazing Cloud
 sdkversion: 1.4.0
 iphone: 
   provisionprofile: 

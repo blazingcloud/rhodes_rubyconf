@@ -20,4 +20,4 @@ LastVisitedPage = ''
 
 # Sync server url.  This must be the full path to your sources.  
 # For example: http://rhomobile.rhohub.com/apps/SugarCRM/sources/
-syncserver = 'http://localhost:3000/apps/mobileruby/sources/'
+syncserver = 'http://ultrasaurus.rhohub.com/apps/Rubyconf_app/sources/'
