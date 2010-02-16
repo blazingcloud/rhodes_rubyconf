@@ -13,23 +13,20 @@ class SettingsController < Rho::RhoController
     @msg = @params['msg']
     render :action => :login
   end
+  
+  def start
+      @logged_in = SyncEngine::logged_in
+      if @logged_in == 0
+        @logged_in = SyncEngine.login("anonymous", "password", (url_for :action => :login_callback) )
+      end
+      WebView.navigate ( '/app' )
+  end
 
   def login_callback
     errCode = @params['error_code'].to_i
     if errCode == 0
       # run sync if we were successful
-      WebView.navigate Rho::RhoConfig.start_path
-      SyncEngine.dosync
-    else
-      if errCode == Rho::RhoError::ERR_CUSTOMSYNCSERVER
-        @msg = @params['error_message']
-      end
-        
-      if !@msg || @msg.length == 0   
-        @msg = Rho::RhoError.new(errCode).message
-      end
-      
-      WebView.navigate ( url_for :action => :login, :query => {:msg => @msg} )
+      SyncEngine::dosync 
     end  
   end
 
