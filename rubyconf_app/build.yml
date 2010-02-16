@@ -1,18 +1,18 @@
 --- 
-name: Ruby Conf
 extensions: 
 - extension-name-here
 - second-extension-name
+name: RubyConf
 bbver: 4.6
-sdk: /Library/Ruby/Gems/1.8/gems/rhodes-1.4.0
+sdk: /usr/local/lib/ruby/gems/1.8/gems/rhodes-1.4.0
 applog: rholog.txt
-version: 1.4.0
 wmsdk: Windows Mobile 6 Professional SDK (ARMV4I)
-sdkversion: 1.4.0
+version: 1.4.0
 vendor: rhomobile
+sdkversion: 1.4.0
 iphone: 
   provisionprofile: 
   sdk: iphonesimulator3.0
-  codesignidentity: 
   entitlements: 
+  codesignidentity: 
   configuration: Debug
