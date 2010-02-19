@@ -41,26 +41,31 @@ class PersonController < Rho::RhoController
   def map
     p "------------------------------------- map"
     @people = Person.find(:all)
-    annotations = @people.map do |person|
-      p "person=#{person.inspect}"
-      result = {}
-      unless person.latitude.nil? or person.latitude.empty?
-        result[:latitude] = person.latitude
-        result[:longitude] = person.longitude
+    
+    if System::get_property('platform') != 'APPLE' and System::get_property('platform') != 'Blackberry'
+      render :action => :map
+    else
+      annotations = @people.map do |person|
+        p "person=#{person.inspect}"
+        result = {}
+        unless person.latitude.nil? or person.latitude.empty?
+          result[:latitude] = person.latitude
+          result[:longitude] = person.longitude
+        end
+        result[:title] = person.name
+        result[:subtitle] = person.twitter
+        result[:street_address] = person.zip
+        result[:url] = "/app/Person/#{person.object}/show"
+        result
       end
-      result[:title] = person.name
-      result[:subtitle] = person.twitter
-      result[:street_address] = person.zip
-      result[:url] = "/app/Person/#{person.object}/show"
-      result
+      p "annotations=#{annotations}"
+      MapView.create(
+        :settings => {:map_type => "hybrid", :region => ["US"],
+                      :zoom_enabled => true, :scroll_enabled => true, :shows_user_location => false},
+        :annotations => annotations
+      )
+      redirect :action => :index
     end
-    p "annotations=#{annotations}"
-    MapView.create(
-      :settings => {:map_type => "hybrid", :region => ["US"],
-                    :zoom_enabled => true, :scroll_enabled => true, :shows_user_location => false},
-      :annotations => annotations
-    )
-    redirect :action => :index
   end
 
   # POST /Person/create

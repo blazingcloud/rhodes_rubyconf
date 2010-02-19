@@ -4,6 +4,7 @@
 	<head>
 		<title>RubyconfApp</title>
 		<link href="/public/css/base.css" type="text/css" rel="stylesheet"/>		
+		<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAAzr2EBOXUKnm_jVnk0OJI7xSosDVG8KKPE1-m51RBrvYughuyMxQ-i1QfUnH94QxWIa6N4U6MouMmBA" type="text/javascript"></script>
 			
 		<% if System::get_property('platform') == 'APPLE' %>
 			<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
@@ -16,23 +17,24 @@
 			<% if System::get_property('platform') == 'Blackberry' %>
 				<link href="/public/css/blackberry.css" type="text/css" rel="stylesheet"/>	
 			<% else %>	
-				<link href="/public/css/xhtml.css" type="text/css" rel="stylesheet"/>	
+				<link href="/public/css/xhtml.css" type="text/css" rel="stylesheet"/>
 			<% end %>
-		<% end %>	
-				
+		<% end %>		
+		
+		
 	</head>
-	<body>
-        <% if System::get_property('platform') != 'APPLE' and System::get_property('platform') != 'Blackberry' %>
-      <div class="navigation">
-        <table width="100%" style="text-align:center;">
-          <tr>
-            <td><a href="/app">Home</a></td>
-            <td><a href="/app/Person">People</a></td>
-            <td><a href="<%= url_for :controller => 'Person', :action => :map %>">Map</a></td>
-            <td><a href="<%= url_for :controller => 'Person', :action => :about %>">About</a></td>
-          </tr>
-        </table>
-      </div>
+	<body onload="initialize()">
+    <% if System::get_property('platform') != 'APPLE' and System::get_property('platform') != 'Blackberry' %>
+	      <div class="navigation">
+	        <table width="100%" style="text-align:center;">
+	          <tr>
+	            <td><a href="/app">Home</a></td>
+	            <td><a href="/app/Person">People</a></td>
+	            <td><a href="<%= url_for :controller => 'Person', :action => :map %>">Map</a></td>
+	            <td><a href="<%= url_for :controller => 'Person', :action => :about %>">About</a></td>
+	          </tr>
+	        </table>
+	      </div>
     <% end %>
 		<%= @content %>
 	</body>
