@@ -1,3 +1,6 @@
 rubyconf_app/bin/
+rubyconf_app/preverified/
+rubyconf_app/RhoBundle/
 rubyconf_app/sim-public
 rubyconf_app/rholog.txt
+*~

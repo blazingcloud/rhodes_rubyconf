@@ -13,7 +13,7 @@ class AppApplication < Rho::RhoApplication
     @default_menu = { "Schedule" => "/app", 
                           "People" => "/app/Person", 
                           "Map" => "/app/Person/map", 
-                          "About" => "/app/about",
+                          "About" => "/app/Person/about",
                           "Close" => :close }
   end
   
