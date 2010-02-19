@@ -24,7 +24,7 @@ body {
 .button {
     position: absolute;
     overflow: hidden;
-    top: 8px;
+    top: 15px;
     right: 6px;
     margin: 3px;
     border-width: 0 5px;
