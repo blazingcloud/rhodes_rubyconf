@@ -2,7 +2,7 @@
     function initialize() {
       if (GBrowserIsCompatible()) {
         var map = new GMap2(document.getElementById("map_canvas"));
-        map.setCenter(new GLatLng(<%= GeoLocation.latitude.to_s %>, <%= GeoLocation.longitude.to_s %>), 13);
+        map.setCenter(new GLatLng(<%= GeoLocation.latitude.to_s %>, <%= GeoLocation.longitude.to_s %>), 8);
  
         // Add 10 markers to the map at random locations
         var bounds = map.getBounds();
@@ -13,15 +13,23 @@
         
 		
 		var marker; 
-		<% @people.each do |person| %>
+		var geocoder = new GClientGeocoder();
+		<% @people.map do |person| %>
 		
 		  <% if person.latitude.nil? or person.latitude.empty? %>
-		  	marker = new google.maps.Marker(<%= person.zipcode.to_s %>); 
+		  
+		  geocoder.getLatLng("<%= person.zip %>", 
+		  	function(point) {
+        		map.addOverlay(new GMarker(point));
+			}
+		  );
+
 		  <% else %>
           	marker = new GLatLng(<%= person.latitude.to_s %>,<%= person.longitude.to_s %>);
+			map.addOverlay(new GMarker(marker));
 		  <% end %>  
 		  
-		  map.addOverlay(new GMarker(marker));
+		  
 		<% end %>
       }
     }
