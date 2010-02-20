@@ -24,18 +24,6 @@
 		
 	</head>
 	<body onload="initialize()">
-    <% if System::get_property('platform') != 'APPLE' and System::get_property('platform') != 'Blackberry' %>
-	      <div class="navigation">
-	        <table width="100%" style="text-align:center;">
-	          <tr>
-	            <td><a href="/app">Home</a></td>
-	            <td><a href="/app/Person">People</a></td>
-	            <td><a href="<%= url_for :controller => 'Person', :action => :map %>">Map</a></td>
-	            <td><a href="<%= url_for :controller => 'Person', :action => :about %>">About</a></td>
-	          </tr>
-	        </table>
-	      </div>
-    <% end %>
 		<%= @content %>
 	</body>
 </html>
