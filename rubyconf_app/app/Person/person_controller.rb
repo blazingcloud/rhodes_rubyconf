@@ -42,7 +42,8 @@ class PersonController < Rho::RhoController
     p "------------------------------------- map"
     @people = Person.find(:all)
     
-    if System::get_property('platform') != 'APPLE' and System::get_property('platform') != 'Blackberry'
+    platform = System::get_property('platform')
+    if platform != 'APPLE' and platform != 'Blackberry' and platform != 'ANDROID'
       render :action => :map
     else
       annotations = @people.map do |person|
