@@ -1,90 +1,186 @@
 <div class="toolbar">
 	<h1 id="pageTitle">
-		Saturday Schedule
+		Schedule
 	</h1>
 </div>
 <style type="text/css">
-#schedule td, #schedule th {
+.schedule td, .schedule th {
 	width: 33%;
+}
+.schedule tr.header > th {
+	border: none;
 }
 
 </style>
-<table id="schedule" cellpadding="5" border="1" cellspacing="0">
+<table class="schedule" cellpadding="5" border="1" cellspacing="0">
+	<tr class="header">
+		<th></th>
+		<th>Thursday</th>
+		<th></th>
+	</tr>
 	<tr>
 		<th>Time</th>
 		<th>Presentation</th>
-		<th>Presentor(s)</th>
+		<th>Presenter(s)</th>
+	</tr>
+	<tr>
+		<td>8:00 AM</td>
+		<td>Registration</td>
+		<td></td>
 	</tr>
 	<tr>
 		<td>9:00 AM</td>
 		<td>Welcome</td>
-		<td>JR Fent, Coby Randquist</td>
+		<td></td>
 	</tr>
 	<tr>
 		<td>9:15 AM</td>
-		<td>Oh S***: How to bring a big Rails website down (and how not to)</td>
-		<td>Time Morgan</td>
+		<td>Archaeopteryx: Lambdas In Detail</td>
+		<td>Giles Bowkett</td>
 	</tr>
 	<tr>
-		<td>10:05 AM</td>
-		<td>Alternative Data Structures in Ruby</td>
-		<td>Tyler McMullen</td>
+		<td>10:00 AM</td>
+		<td>Cooking with Chef</td>
+		<td>James Golick</td>
 	</tr>
 	<tr>
-		<td>10:55 AM</td>
-		<td>Indoctrinating the Next Generation: Teaching Ruby to Kids</td>
-		<td>Sarah Mei</td>
+		<td>10:30 AM</td>
+		<td>Managing ruby projects with rvm</td>
+		<td>Wayne E. Seguin</td>
 	</tr>
 	<tr>
-		<td>11:45 AM</td>
-		<td>Everything you ever wanted to know about threads and fibers, but were afraid to ask.</td>
-		<td>Joe Damato</td>
-	</tr>
-	<tr>
-		<td>12:25 PM</td>
+		<td>11:00 AM</td>
 		<td>Lunch</td>
 		<td></td>
 	</tr>
 	<tr>
+		<td>1:00 PM</td>
+		<td>Rack for web developers</td>
+		<td>Michael J. I. Jackson</td>
+	</tr>
+	<tr>
 		<td>1:30 PM</td>
-		<td>New Relic Presentation</td>
+		<td>Writing Modular Ruby Code: Lessons Learned from Rails 3</td>
+		<td>Yehuda Katz</td>
+	</tr>
+	<tr>
+		<td>2:15</td>
+		<td>How HTTP Already Solved All Your Performance Problems 10 Years Ago</td>
+		<td>Paul Sadauskas</td>
+	</tr>
+	<tr>
+		<td>2:45 PM</td>
+		<td>Break</td>
 		<td></td>
 	</tr>
 	<tr>
-		<td>1:50 PM</td>
-		<td>Civic Hacking</td>
-		<td>Luigi Montanez</td>
-	</tr>
-	<tr>
-		<td>2:40 PM</td>
-		<td>Garbage Collection and the Ruby Heap</td>
-		<td>Aman Gupta</td>
+		<td>3:00 PM</td>
+		<td>I was wrong about Ruport</td>
+		<td>Gregory Brown</td>
 	</tr>
 	<tr>
 		<td>3:30 PM</td>
-		<td>A New Look at Software Development: What will the next 10 years bring?</td>
-		<td>Dave Astels</td>
+		<td>Documentation and the Whole Nine YARDs</td>
+		<td>Loren Segal</td>
 	</tr>
 	<tr>
-		<td>4:20 PM</td>
+		<td>4:00 PM</td>
+		<td>Dynamic Generation of Images and Video with Ruby-Processing</td>
+		<td>Jeff Casimir</td>
+	</tr>
+	<tr>
+		<td>4:45 PM</td>
+		<td>Break</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>5:00 PM</td>
+		<td>Lightning Talks</td>
+		<td></td>
+	</tr>
+	<tr class="header">
+		<th></th>
+		<th>Friday</th>
+		<th></th>
+	</tr>
+	<tr>
+		<th>Time</th>
+		<th>Presentation</th>
+		<th>Presenter(s)</th>
+	</tr>
+	<tr>
+		<td>8:00 AM</td>
+		<td>Registration</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>9:00 AM</td>
+		<td>Welcome</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>9:15 AM</td>
+		<td>Whatever he wants to talk about</td>
+		<td>Matz</td>
+	</tr>
+	<tr>
+		<td>10:00 AM</td>
+		<td>Ruby Macros</td>
+		<td>Caleb Clausen</td>
+	</tr>
+	<tr>
+		<td>10:30 AM</td>
+		<td>Ruby Techniques By Example</td>
+		<td>Jeremy Evans</td>
+	</tr>
+	<tr>
+		<td>11:00 AM</td>
+		<td>Lunch</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>1:00 PM</td>
+		<td>Hubris: The Ruby/Haskell Bridge</td>
+		<td>James Britt</td>
+	</tr>
+	<tr>
+		<td>1:30 PM</td>
 		<td>Mobile Ruby</td>
 		<td>Sarah Allen</td>
 	</tr>
 	<tr>
-		<td>5:10 PM</td>
-		<td>Keynote address</td>
-		<td>Richard Kilmer</td>
+		<td>2:15 PM</td>
+		<td>MongoDB Rules</td>
+		<td>Kyle Banker</td>
 	</tr>
 	<tr>
-		<td>6:15 PM</td>
-		<td>Dinner (on your own)</td>
+		<td>2:45 PM</td>
+		<td>Break</td>
 		<td></td>
 	</tr>
 	<tr>
-		<td>8:00 PM</td>
-		<td>Wine Fest</td>
-		<td>JR Fent</td>
+		<td>3:00 PM</td>
+		<td>Descent into Darkness</td>
+		<td>Joe Damato</td>
 	</tr>
-	
-	
+	<tr>
+		<td>3:30 PM</td>
+		<td>A tale of two codebases</td>
+		<td>Pat Maddox</td>
+	</tr>
+	<tr>
+		<td>4:00 PM</td>
+		<td>EventMachine</td>
+		<td>Aman Gupta</td>
+	</tr>
+	<tr>
+		<td>4:00 PM</td>
+		<td>Break</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>5:00 PM</td>
+		<td>Lightning Talks</td>
+		<td></td>
+	</tr>
 </table>
