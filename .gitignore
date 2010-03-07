@@ -4,3 +4,5 @@ rubyconf_app/RhoBundle/
 rubyconf_app/sim-public
 rubyconf_app/rholog.txt
 *~
+rubyconf_app/build.yml
+rubyconf_app/.idea/
