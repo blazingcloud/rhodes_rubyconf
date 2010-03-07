@@ -1,10 +1,9 @@
---- 
 extensions: 
 - extension-name-here
 - second-extension-name
 name: RubyConf
-bbver: 4.6
-sdk: /Users/macboypro/src/rhodes  
+bbver: 4.7
+sdk: "C:/src/rhodes"
 applog: rholog.txt
 wmsdk: Windows Mobile 6 Professional SDK (ARMV4I)
 version: 1.0

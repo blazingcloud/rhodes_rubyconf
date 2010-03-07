@@ -5,13 +5,123 @@
 </div>
 <style type="text/css">
 .schedule td, .schedule th {
-	width: 33%;
+	width: 100%;
 }
 .schedule tr.header > th {
 	border: none;
 }
 
+span.bold {
+	font-weight: bold;
+}
+
 </style>
+
+<% if System::get_property('platform') == 'Blackberry' %>
+<table class="schedule" cellpadding="5" border="1" cellspacing="0">
+	<tr class="header">
+		<th></th>
+		<th>Thursday</th>
+		<th></th>
+	</tr>
+	<tr>
+		<td><span class="bold">8:00 - 9:00</span> Registration</td>
+	</tr>
+	<tr>
+		<td><span class="bold">9:00 - 9:15</span> Welcome</td>
+	</tr>
+	<tr>
+		<td><span class="bold">9:15 - 10:00</span> Giles Bowkett - Archaeopteryx: Lambdas In Detail</td>
+	</tr>
+	<tr>
+		<td><span class="bold">10:00 - 10:30</span> James Golick - Cooking with Chef - Your servers will thank you</td>
+	</tr>
+	<tr>
+		<td><span class="bold">10:30 - 11:00</span> Wayne E. Seguin - Managing ruby projects with rvm</td>
+	</tr>
+	<tr>
+		<td><span class="bold">11:00 - 1:00</span> Lunch</td>
+	</tr>
+	<tr>
+		<td><span class="bold">1:00 - 1:30</span> Michael J. I. Jackson - Rack for web developers</td>
+	</tr>
+	<tr>
+		<td><span class="bold">1:30 - 2:15</span> Yehuda Katz - Writing Modular Ruby Code: Lessons Learned from Rails 3</td>
+	</tr>
+	<tr>
+		<td><span class="bold">2:15 - 2:45</span> Paul Sadauskas - How HTTP Already Solved All Your Performance Problems 10 Years Ago</td>
+	</tr>
+	<tr>
+		<td><span class="bold">2:45 - 3:00</span> Break</td>
+	</tr>
+	<tr>
+		<td><span class="bold">3:00 - 3:30</span> Gregory Brown - I was wrong about Ruport</td>
+	</tr>
+	<tr>
+		<td><span class="bold">3:30 - 4:00</span> Loren Segal - Documentation and the Whole Nine YARDs</td>
+	</tr>
+	<tr>
+		<td><span class="bold">4:00 - 4:45</span> Jeff Casimir - Dynamic Generation of Images and Video with Ruby-Processing</td>
+	</tr>
+	<tr>
+		<td><span class="bold">4:45 - 5:00</span> Break</td>
+	</tr>
+	<tr>
+		<td><span class="bold">5:00 - 6:00</span> Lightning Talks</td>
+	</tr>
+	<tr class="header">
+		<th></th>
+		<th>Friday</th>
+		<th></th>
+	</tr>
+	<tr>
+		<td><span class="bold">8:00 - 9:00</span> Registration</td>
+	</tr>
+	<tr>
+		<td><span class="bold">9:00 - 9:15</span> Welcome</td>
+	</tr>
+	<tr>
+		<td><span class="bold">9:15 - 10:00</span> Matz - Whatever he wants to talk about</td>
+	</tr>
+	<tr>
+		<td><span class="bold">10:00 - 10:30</span> Caleb Clausen - Ruby Macros</td>
+	</tr>
+	<tr>
+		<td><span class="bold">10:30 - 11:00</span> Jeremy Evans - Ruby Techniques By Example</td>
+	</tr>
+	<tr>
+		<td><span class="bold">11:00 - 1:00</span> Lunch</td>
+	</tr>
+	<tr>
+		<td><span class="bold">1:00 - 1:30</span> James Britt - Hubris: The Ruby/Haskell Bridge</td>
+	</tr>
+	<tr>
+		<td><span class="bold">1:30 - 2:15</span> Sarah Allen - Mobile Ruby</td>
+	</tr>
+	<tr>
+		<td><span class="bold">2:15 - 2:45</span> Kyle Banker - MongoDB Rules</td>
+	</tr>
+	<tr>
+		<td><span class="bold">2:45 - 3:00</span> Break</td>
+	</tr>
+	<tr>
+		<td><span class="bold">3:00 - 3:30</span> Joe Damato - Descent into Darkness: Understanding your system's binary interface is the only way out</td>
+	</tr>
+	<tr>
+		<td><span class="bold">3:30 - 4:00</span> Pat Maddox - A tale of two codebases</td>
+	</tr>
+	<tr>
+		<td><span class="bold">4:00 - 4:45</span> Aman Gupta - EventMachine</td>
+	</tr>
+	<tr>
+		<td><span class="bold">4:45 - 5:00</span> Break</td>
+	</tr>
+	<tr>
+		<td><span class="bold">5:00 - 6:00</span> Lightning Talks</td>
+	</tr>
+	
+</table>
+<% else %>
 <table class="schedule" cellpadding="5" border="1" cellspacing="0">
 	<tr class="header">
 		<th></th>
@@ -184,3 +294,4 @@
 		<td></td>
 	</tr>
 </table>
+<% end %>
