@@ -16,3 +16,7 @@ iphone:
   entitlements: 
   codesignidentity: 
   configuration: Debug
+android:
+  mapping: yes
+  # http://code.google.com/intl/en/android/add-ons/google-apis/mapkey.html
+  #apikey: "GOOGLE-API-KEY-FOR-ANDROID"
